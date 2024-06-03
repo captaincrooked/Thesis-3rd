@@ -1,0 +1,33 @@
+<?php
+if(isset($_POST['surname']) && isset($_POST['firstName']) && isset($_POST['gender']) 
+&& isset($_POST['age']) && isset($_POST['birthdate']) && isset($_POST['status']) && isset($_POST['img'])) {
+    include "../db_conn.php";
+    
+    $surname = $_POST['surname'];
+    $firstName = $_POST['firstName'];
+    $gender = $_POST['gender'];
+    $age = $_POST['age'];
+    $birthdate = $_POST['birthdate'];
+    $status = $_POST['status'];
+    $img = $_POST['img'];
+    
+    if (empty($surname)){
+        header("Location: ../registration.php?ms=Dont leave blanks");
+        exit();
+    }
+    
+    $sql = "INSERT INTO register(surname, firstName, gender, age, birthdate, status, img) VALUES('$surname', '$firstName', '$gender', '$age', '$birthdate', '$status', '$img')";
+    
+    $result = mysqli_query($conn, $sql);
+    
+    if($result){
+        $ms = "Thank you for your response";
+        header("Location: ../registration.php?ms=$ms");
+        exit();
+    } else {
+        $ms = "error";
+        header("Location: ../registration.php?ms=$ms");
+        exit();
+    }
+}
+?>

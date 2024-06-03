@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Ensuring full-width header */
+header {
+    width: 100%;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px 0;
+}
+
+/* Centering the form */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styling form group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Styling form inputs */
+input[type="text"], input[type="date"], input[type="file"], input[type="radio"] {
+    margin-right: 10px;
+    width: calc(100% - 10px); /* Adjusting width for responsiveness */
+}
+
+/* Styling submit button */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"], input[type="date"], input[type="file"], input[type="radio"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
